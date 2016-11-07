@@ -1,13 +1,12 @@
 cask 'texts' do
-  version '1.3.1'
-  sha256 'eef95726f3eea2408ad9f410e71c357476962a5cd87ee0421b0029a9b8f047d9'
+  version '1.4'
+  sha256 '410a789d2d877505c540e9562162596dbfae4f7454511531015ec1ea18f959ac'
 
   url "http://www.texts.io/Texts-#{version}.dmg"
   appcast 'http://www.texts.io/appcast-osx.xml',
-          checkpoint: '79e011daed78006c26693d1735a5a5534a2b18caf8e4eafa218b0ea71da804c6'
+          checkpoint: '47e1ffeedbbc49ee19a70acf9aee9fe0a7df00ce60e23b427433fe5536add962'
   name 'Texts'
   homepage 'http://www.texts.io'
-  license :commercial
 
   app 'Texts.app'
 end

@@ -1,17 +1,17 @@
 cask 'visual-studio-code' do
-  version '0.10.6-release'
-  sha256 '78d333e1e7ae9bffc84fa1c6a0dbc3e8530d85b62c3b318e6687eefec2b3ddf9'
+  version '1.7.1,02611b40b24c9df2726ad8b33f5ef5f67ac30b44'
+  sha256 'f82d13dc2717f7cd31c3c1d3253af21af6c2c259b4bfef12263aa75b684fef15'
 
-  # vo.msecnd.net is the official download host per the vendor homepage
-  url "https://az764295.vo.msecnd.net/public/#{version}/VSCode-darwin.zip"
+  # az764295.vo.msecnd.net was verified as official when first introduced to the cask
+  url "https://az764295.vo.msecnd.net/stable/#{version.after_comma}/VSCode-darwin-stable.zip"
   name 'Microsoft Visual Studio Code'
   name 'VS Code'
   homepage 'https://code.visualstudio.com/'
-  license :mit
 
   auto_updates true
 
   app 'Visual Studio Code.app'
+  binary "#{appdir}/Visual Studio Code.app/Contents/Resources/app/bin/code"
 
   zap delete: [
                 '~/Library/Application Support/Code',

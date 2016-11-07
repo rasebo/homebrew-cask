@@ -1,11 +1,10 @@
 cask 'balsamiq-mockups' do
-  version '3.3.9'
-  sha256 'fd6fce2b3e68cb9f50f07ae8b1625855a244d25606fa5c361411d3c7a220d6c5'
+  version '3.5.5'
+  sha256 'b08819effb63fa3361e2286d4e580bc67edf30c16962c34453e191ccbcfc482e'
 
   url "https://builds.balsamiq.com/mockups-desktop/Balsamiq_Mockups_#{version}.dmg"
   name 'Balsamiq Mockups'
   homepage 'https://balsamiq.com/'
-  license :commercial
 
   app "Balsamiq Mockups #{version.major}.app"
 

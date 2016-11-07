@@ -1,12 +1,10 @@
 cask 'kismac' do
-  version '0.3.3'
-  sha256 'd48f307c1c46a1d1a6b4465d653cf417e583bc09b7ea76d21183068066bc49bb'
+  version '0.3.4'
+  sha256 '62408ccc503c104ede70f8ad1ee55998a6c60ad89411fc2a57ce6be7bab39db5'
 
-  # kismacmirror.com is the official download host per the vendor homepage
-  url "http://update.kismacmirror.com/binaries/KisMAC-#{version}.dmg"
-  name 'KisMAC'
-  homepage 'http://kismac-ng.org/'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  url 'http://downloads.igrsoft.com/beta/KisMac2.zip'
+  name 'KisMac'
+  homepage 'https://igrsoft.com/kismac2/'
 
-  app 'KisMAC.app'
+  app 'KisMac2.app'
 end

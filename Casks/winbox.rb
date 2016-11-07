@@ -1,11 +1,10 @@
 cask 'winbox' do
-  version '3.0'
-  sha256 '2924d7629524f835ae9b49e125edb44f9e8cda890e41609fab5db66a8d63f595'
+  version '3.7'
+  sha256 '47c3d0dee54541b04efc9ca08dd80a76513600d28d8d63f4898b809536869fda'
 
   url "http://joshaven.com/Winbox4Mac_#{version}.dmg"
   name 'Winbox4Mac'
-  homepage 'http://joshaven.com/resources/tools/winbox-for-mac/'
-  license :gratis
+  homepage 'https://joshaven.com/resources/tools/winbox-for-mac/'
 
   app 'Winbox4Mac.app'
 end

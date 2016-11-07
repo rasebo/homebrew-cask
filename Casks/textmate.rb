@@ -1,15 +1,16 @@
 cask 'textmate' do
-  version '2.0-beta.8.5'
-  sha256 '18ef15feea960cff6034c9cbe5e3cb38cbf0fcd0d57e4b8c78656a392dd5dc07'
+  version '2.0-beta.12.33'
+  sha256 '10752739b5a0af96d6a45ec7220f13e5452ff372bed7a9ef52452595f84e4da2'
 
-  # textmate.org is the official download host per the vendor homepage
-  url "https://api.textmate.org/downloads/TextMate_#{version}.tbz"
+  # github.com/textmate/textmate was verified as official when first introduced to the cask
+  url "https://github.com/textmate/textmate/releases/download/v#{version}/TextMate_#{version}.tbz"
+  appcast 'https://github.com/textmate/textmate/releases.atom',
+          checkpoint: 'b060d402f446bbcd4bf57b2680ccbea30b834a6eb7d377b8c6330703be91fe26'
   name 'TextMate'
   homepage 'https://macromates.com/'
-  license :gpl
 
   app 'TextMate.app'
-  binary 'TextMate.app/Contents/Resources/mate'
+  binary "#{appdir}/TextMate.app/Contents/Resources/mate"
 
   zap delete: [
                 '~/Library/Application Support/Avian',

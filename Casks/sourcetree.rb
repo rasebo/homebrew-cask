@@ -1,30 +1,40 @@
 cask 'sourcetree' do
-  if MacOS.release <= :snow_leopard
+  if MacOS.version <= :snow_leopard
     version '1.8.1'
     sha256 '37a42f2d83940cc7e1fbd573a70c3c74a44134c956ac3305f6b153935dc01b80'
+  elsif MacOS.version <= :mountain_lion
+    version '2.0.5.5'
+    sha256 'f23129587703a706a37d5fdd9b2390875305b482a2b4e4b0e34bd49cba9b63c9'
   else
-    version '2.1'
-    sha256 '5c50f2ae7d9a4c26af6f1af4b3d30f81a4bfcf6b1386bf8ede73947c1447e305'
+    version '2.3.2'
+    sha256 '5973cb419275cfb441ff3bb7e3228918d430ca13484ddd858c9df9f5720e7ca9'
   end
 
-  # atlassian.com is the official download host per the vendor homepage
-  url "https://downloads.atlassian.com/software/sourcetree/SourceTree_#{version}.dmg"
+  # atlassian.com was verified as official when first introduced to the cask
+  url "https://downloads.atlassian.com/software/sourcetree/SourceTree_#{version}.zip"
   appcast 'https://www.sourcetreeapp.com/update/SparkleAppcast.xml',
-          checkpoint: 'ef1f286dd1194d6715994ce99332e1db203de7f83555f15c5442773a9de44bf3'
+          checkpoint: '6031bd143374559a84872d0b9ecef5420173e11fb3a0453cfaa092878c6bc908'
   name 'Atlassian SourceTree'
   homepage 'https://www.sourcetreeapp.com/'
-  license :gratis
 
   auto_updates true
 
   app 'SourceTree.app'
-  binary 'SourceTree.app/Contents/Resources/stree'
+  binary "#{appdir}/SourceTree.app/Contents/Resources/stree"
 
-  uninstall launchctl: 'com.atlassian.SourceTreePrivilegedHelper2'
+  postflight do
+    suppress_move_to_applications
+  end
+
+  uninstall launchctl: 'com.atlassian.SourceTreePrivilegedHelper2',
+            quit:      'com.torusknot.SourceTreeNotMAS'
 
   zap delete: [
                 '~/Library/Application Support/SourceTree',
                 '~/Library/Caches/com.torusknot.SourceTreeNotMAS',
+                '~/Library/Preferences/com.torusknot.SourceTreeNotMAS.plist',
+                '~/Library/Preferences/com.torusknot.SourceTreeNotMAS.LSSharedFileList.plist',
+                '~/Library/Saved Application State/com.torusknot.SourceTreeNotMAS.savedState',
               ]
 
   caveats do

@@ -1,14 +1,13 @@
 cask 'powerphotos' do
-  version '1.1.6'
-  sha256 'aed1f6fe169b821c422d437f7df6d1e4a34c5be652793300394789180daff0a7'
+  version '1.2.1'
+  sha256 'b69a97b5771ce2b7772adca381a0a584cdadc160cf520617e6ec101523f33925'
 
-  # amazonaws.com is the official download host per the vendor homepage
+  # s3.amazonaws.com/fatcatsoftware/powerphotos was verified as official when first introduced to the cask
   url "https://s3.amazonaws.com/fatcatsoftware/powerphotos/PowerPhotos_#{version.no_dots}.zip"
-  appcast 'http://www.fatcatsoftware.com/powerphotos/powerphotos_appcast.xml',
-          checkpoint: 'ce5f10cdbd431465c99689133d0c1cf97c8069d0413c55834fee0703c5b55089'
+  appcast 'https://www.fatcatsoftware.com/powerphotos/powerphotos_appcast.xml',
+          checkpoint: 'aa291cd226bfc68e1443736d6015a4018bc75d1bec691aa7a5a97ec5ba704c06'
   name 'PowerPhotos'
-  homepage 'http://www.fatcatsoftware.com/powerphotos/'
-  license :commercial
+  homepage 'https://www.fatcatsoftware.com/powerphotos/'
 
   auto_updates true
   depends_on macos: '>= :yosemite'

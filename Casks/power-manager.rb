@@ -1,15 +1,15 @@
 cask 'power-manager' do
-  version '4.5.0'
-  sha256 '63beadb6631f76646214d90570d78704f4a54c7f129ebea259a232b29b94d296'
+  version '4.5.4'
+  sha256 '358428c72c1f1f9185656986e6674adc3edc51fc9e47d0cef9ff7bf7f4954fa8'
 
-  url "http://www.dssw.co.uk/powermanager/dsswpowermanager-#{version.no_dots}.dmg"
+  url "https://www.dssw.co.uk/powermanager/dsswpowermanager-#{version.no_dots}.dmg"
   appcast 'https://version.dssw.co.uk/powermanager/application',
-          checkpoint: '968a2262cc5e5bc817682cceb4d75d18ea2f8efc8e829b2ef812b2f9fedda081'
+          checkpoint: 'bb2e3dca69a563292b36fbaa8aee38697085430e88cc3cc7fc75a6e56df89c8c'
   name 'Power Manager'
   homepage 'https://www.dssw.co.uk/powermanager'
-  license :commercial
 
-  pkg 'DssW Power Manager.pkg'
+  auto_updates true
+  depends_on macos: '>= :lion'
 
-  uninstall script: '/Library/Application Support/Power Manager/Remove Power Manager.app/Contents/Resources/Remove Power Manager.sh'
+  app 'Power Manager.app'
 end

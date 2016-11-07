@@ -1,20 +1,20 @@
 cask 'phpstorm' do
-  version '10.0.3'
-  sha256 'bd7d28974ef5587524389659dd27516c1067c35aebeee040821c638a18439e52'
+  version '2016.2.2'
+  sha256 '9422a5d8733f82f8a77d7da7376a7bf58ca9d170c43dc1392c8377bda5e6711b'
 
-  url "https://download.jetbrains.com/webide/PhpStorm-#{version}-custom-jdk-bundled.dmg"
-  name 'PhpStorm'
+  url "https://download.jetbrains.com/webide/PhpStorm-#{version}.dmg"
+  name 'JetBrains PhpStorm'
   homepage 'https://www.jetbrains.com/phpstorm/'
-  license :commercial
 
   app 'PhpStorm.app'
 
+  uninstall delete: '/usr/local/bin/pstorm'
+
   zap delete: [
-                "~/.WebIde#{version.major_minor.no_dots}",
-                "~/Library/Caches/WebIde#{version.major_minor.no_dots}",
-                "~/Library/Logs/WebIde#{version.major_minor.no_dots}",
-                "~/Library/Application Support/WebIde#{version.major_minor.no_dots}",
-                "~/Library/Preferences/WebIde#{version.major_minor.no_dots}",
-                '~/Library/Preferences/com.jetbrains.PhpStorm.plist',
+                "~/Library/Preferences/PhpStorm#{version.major_minor}",
+                "~/Library/Caches/PhpStorm#{version.major_minor}",
+                "~/Library/Logs/PhpStorm#{version.major_minor}",
+                "~/Library/Application Support/PhpStorm#{version.major_minor}",
+                # TODO: expand/glob for '~/Library/Preferences/jetbrains.phpstorm.*.plist',
               ]
 end

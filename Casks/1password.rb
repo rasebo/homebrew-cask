@@ -1,5 +1,5 @@
 cask '1password' do
-  if MacOS.release <= :lion
+  if MacOS.version <= :lion
     version '3.8.22'
     sha256 '3afd75f1bddf791dc7dbc9a7d92ab6eb91ee891407d750cedb7b5aff5fe8bf17'
 
@@ -7,7 +7,7 @@ cask '1password' do
     url "https://d13itkw33a7sus.cloudfront.net/dist/1P/mac/1Password-#{version}.zip"
 
     app '1Password.app'
-  elsif MacOS.release <= :mavericks
+  elsif MacOS.version <= :mavericks
     version '4.4.3'
     sha256 '6657fc9192b67dde63fa9f67b344dc3bc6b7ff3e501d3dbe0f5712a41d8ee428'
 
@@ -16,8 +16,8 @@ cask '1password' do
 
     app "1Password #{version.major}.app"
   else
-    version '6.0.2'
-    sha256 '28b79691e3985c15ea34cd0e25987971766cdd478c3cbe276aff476ab16bc922'
+    version '6.3.5'
+    sha256 'c87848e2985bd8854b792812dff9f23be0280b35eb6d1da3ccd104435a18a8b6'
 
     # d13itkw33a7sus.cloudfront.net was verified as official when first introduced to the cask
     url "https://d13itkw33a7sus.cloudfront.net/dist/1P/mac4/1Password-#{version}.zip"
@@ -27,7 +27,6 @@ cask '1password' do
 
   name '1Password'
   homepage 'https://agilebits.com/onepassword'
-  license :commercial
 
   auto_updates true
 

@@ -1,14 +1,13 @@
 cask 'bee' do
-  version '2.3.2'
-  sha256 'f2e448b389063f3be306705553807b8b424e90b0808f0e6525d8b353a42f90c7'
+  version '2.4.4'
+  sha256 'a6dcb6f1915903eb518f1011b4fa6297fc1ff318a3f22a481ebe398cf168720e'
 
   # bee-app.s3.amazonaws.com was verified as official when first introduced to the cask
-  url "http://bee-app.s3.amazonaws.com/public/Bee-#{version}.zip"
-  appcast 'http://www.neat.io/appcasts/bee-appcast.xml',
-          checkpoint: 'a8bcc6df65c976671ab7a3bbba0864e35a146cfe5bd48cf3638d2b07a361afbe'
+  url "https://bee-app.s3.amazonaws.com/public/Bee-#{version}.zip"
+  appcast 'https://s3.amazonaws.com/www.neat.io/appcasts/bee-appcast.xml',
+          checkpoint: '24d4f97bafc024fc43623d37ac49e69f1ee2db89dbae3c2fef10c39a3e6275dc'
   name 'Bee'
   homepage 'http://neat.io/bee/'
-  license :commercial
 
   app 'Bee.app'
 end

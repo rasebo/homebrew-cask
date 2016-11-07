@@ -1,13 +1,13 @@
 cask 'digikam' do
-  version '4.13.0'
-  sha256 'badc0d7f4f3c7092f0722cfcd546cea277e11ac97f948e4e1a23e749f3c400a0'
+  version '5.2.0-02'
+  sha256 '78f2f57f4a49c99792c1c656a7bdcaef3404c85df019d8b031c99b364087e5a5'
 
-  url "http://download.kde.org/stable/digikam/digikam-#{version}-Yosemite.pkg"
+  # kde.org/stable/digikam was verified as official when first introduced to the cask
+  url "http://download.kde.org/stable/digikam/digiKam-#{version}-MacOS-x86-64.pkg"
   name 'digiKam'
   homepage 'https://www.digikam.org'
-  license :gpl
 
-  pkg "digikam-#{version}-Yosemite.pkg"
+  pkg "digikam-#{version}-MacOS-x86-64.pkg"
 
   uninstall pkgutil: 'org.freedesktop.digikam'
 end

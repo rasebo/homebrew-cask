@@ -1,13 +1,12 @@
 cask 'airparrot' do
-  version '2.3.2'
-  sha256 'e15e2e868d7398c56ab0ad3e06c249e1e5b08da0979b78e8211dfb2f61a319dc'
+  version '2.6.2'
+  sha256 'fdc491ab964ac19d4f2b62e9f1f5c827941ce1c207a9eec6003f8aeaf7dc81bd'
 
-  url "https://download.airsquirrels.com/AirParrot2/Mac/AirParrot-#{version}.dmg"
-  appcast 'https://updates.airsquirrels.com/AirParrot2/Mac/AirParrot2.xml',
-          checkpoint: '0ed53a274ffa088d2157d7e37544d2b097f2cd961190d327a3b39c915c42dfa2'
+  url "https://download.airsquirrels.com/AirParrot#{version.major}/Mac/AirParrot-#{version}.dmg"
+  appcast "https://updates.airsquirrels.com/AirParrot#{version.major}/Mac/AirParrot#{version.major}.xml",
+          checkpoint: '92dc351a84122af35a424579d65fa9c842fb0a26d66625a729b21e243a49bffa'
   name 'AirParrot'
-  homepage 'http://www.airsquirrels.com/airparrot/'
-  license :commercial
+  homepage 'https://www.airsquirrels.com/airparrot/'
 
-  app 'AirParrot 2.app'
+  app "AirParrot #{version.major}.app"
 end

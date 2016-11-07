@@ -1,18 +1,20 @@
 cask 'phoenix' do
-  version '2.0.1'
-  sha256 '95c1cf43b581f7957658f95a89a6567bdbc95050d6dd796156c676092055defa'
+  version '2.3'
+  sha256 'f04e567a947123155ebfea56c6f9b9f27e6bc0c80e6fadc734a3774900ed39ef'
 
   url "https://github.com/kasper/phoenix/releases/download/#{version}/phoenix-#{version}.tar.gz"
   appcast 'https://github.com/kasper/phoenix/releases.atom',
-          checkpoint: '2880ccfe4a79f84e6aa55b29e47d46663a8f007926d62af7d44fa83d71f70750'
+          checkpoint: 'a9458b34e1447b21ffbf7de47e94ed99451126bf2fe46884d0c4e4b9809affcd'
   name 'Phoenix'
   homepage 'https://github.com/kasper/phoenix/'
-  license :mit
 
   accessibility_access true
   depends_on macos: '>= :yosemite'
 
   app 'Phoenix.app'
 
-  zap delete: '~/.phoenix.js'
+  zap delete: [
+                '~/.phoenix.js',
+                '~/Library/Application Support/Phoenix/storage.json',
+              ]
 end

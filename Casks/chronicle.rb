@@ -1,13 +1,12 @@
 cask 'chronicle' do
-  version '5.7.0'
-  sha256 '1171b77577cdfabc5cf1a140ba909a0697fcb157fc0ba2a0a8fca7ed639ab687'
+  version '6.6.1'
+  sha256 '622bdacaf4cab9dd329b17426ba922d2358f08025f7c4055519a47610d4d1066'
 
   url 'http://chronicleapp.com/static/downloads/chronicle.zip'
   appcast 'http://www.littlefin.com/downloads/chronicle3.xml',
-          checkpoint: '143465ba0dda54d7de226e50fe24966c6faed507cf3dde641ffc25d809a89567'
+          checkpoint: 'ff7b3f1f508cdbcd382df87e51fe6bac8cefbdd20455b1a195363a60f808c480'
   name 'Chronicle'
   homepage 'http://chronicleapp.com/'
-  license :commercial
 
   app 'Chronicle.app'
 end

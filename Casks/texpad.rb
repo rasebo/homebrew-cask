@@ -1,21 +1,17 @@
 cask 'texpad' do
-  if MacOS.release >= :mavericks
+  if MacOS.version <= :mountain_lion
     version '1.7.21'
     sha256 'cae312b89d25752917bf66572fd1c6b6722097b651abe9a1a1b399dc36493512'
-  elsif MacOS.release <= :mountain_lion && MacOS.release >= :snow_leopard
-    version '1.7.23'
-    sha256 'cae312b89d25752917bf66572fd1c6b6722097b651abe9a1a1b399dc36493512'
   else
-    # If the app is used on MacOS lower than Snow Leopard,
-    # unexpected behaviour or failures can occur.
+    version '1_7_34__123__53f8781'
+    sha256 'b331dbe5f37540cb352b78c023c66914016b83d5fb7ffb9f944caa255f7bd58e'
   end
 
-  url "https://download.texpadapp.com/apps/osx/updates/Texpad_#{version.gsub('.', '_')}.zip"
+  url "https://download.texpadapp.com/apps/osx/updates/Texpad_#{version.dots_to_underscores}.dmg"
   appcast 'https://www.texpadapp.com/static-collected/upgrades/texpadappcast.xml',
-          checkpoint: '9271b5b259bc459316233532c993e5f95fa772253d5245befa080235dca3e7a2'
+          checkpoint: 'eb1bce3688e13a6c0a3544a6362365d94d8010b6d30ff149a76f82d3c461d748'
   name 'Texpad'
   homepage 'https://www.texpadapp.com/osx'
-  license :commercial
 
   depends_on macos: '>= :snow_leopard'
 

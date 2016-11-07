@@ -1,19 +1,19 @@
 cask 'oclint' do
-  version '0.10.2'
-  sha256 '908ff716be831f1842daf81f899d86b1ee56109656fc1b6ccd69f8806ffdb75c'
+  version '0.11,15.6.0'
+  sha256 '804d7389d8631835fd4ceee845c5a6cc47062ffb10341ffcb421269c25182c0d'
 
-  # github.com is the official download host per the vendor homepage
-  url "https://github.com/oclint/oclint/releases/download/v#{version}/oclint-#{version}-x86_64-darwin-15.2.0.tar.gz"
+  # github.com/oclint/oclint was verified as official when first introduced to the cask
+  url "https://github.com/oclint/oclint/releases/download/v#{version.before_comma}/oclint-#{version.before_comma}-x86_64-darwin-#{version.after_comma}.tar.gz"
   appcast 'https://github.com/oclint/oclint/releases.atom',
-          checkpoint: '776ee0710ae369b0995578c4c0b28bf420012975b70703014fe69e943c481f46'
+          checkpoint: '2b9179b96d9caccfcbac1aca6d10b6dfb5aa176daf840800434b32c12277a17b'
   name 'OCLint'
   homepage 'http://oclint.org'
-  license :oss
 
-  binary "oclint-#{version}/bin/oclint"
-  binary "oclint-#{version}/bin/oclint-json-compilation-database"
-  binary "oclint-#{version}/bin/oclint-xcodebuild"
-  binary "oclint-#{version}/lib/oclint", target: '/usr/local/lib/oclint'
+  binary "oclint-#{version.before_comma}/bin/oclint"
+  binary "oclint-#{version.before_comma}/bin/oclint-json-compilation-database"
+  binary "oclint-#{version.before_comma}/bin/oclint-xcodebuild"
+  binary "oclint-#{version.before_comma}/lib/oclint", target: '/usr/local/lib/oclint'
+  binary "oclint-#{version.before_comma}/include/c++", target: '/usr/local/include/c++'
 
   caveats do
     files_in_usr_local

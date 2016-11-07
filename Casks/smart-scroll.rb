@@ -1,11 +1,10 @@
 cask 'smart-scroll' do
-  version '4.0.7'
-  sha256 '825517a2078bda2477be58cf36a6293d157b8e1057a4f615bcc6ce8d08aafcd4'
+  version '4.2.1'
+  sha256 '1af2c8ad754c2d88b8c04748ff4bf5a3a913666f3dd03084d292579cd584bd29'
 
-  url 'http://www.marcmoini.com/SmartScroll.zip'
+  url 'https://www.marcmoini.com/SmartScroll.dmg'
   name 'Smart Scroll'
-  homepage 'http://www.marcmoini.com/sx_en.html'
-  license :commercial
+  homepage 'https://www.marcmoini.com/sx_en.html'
 
   depends_on macos: '>= :snow_leopard'
 

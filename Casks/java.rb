@@ -1,14 +1,13 @@
 cask 'java' do
-  version '1.8.0_74-b02'
-  sha256 '52fc1bf96514553cd70e5dfa79b764f8522f23536c05ad413c5585755f08e998'
+  version '1.8.0_112-b16'
+  sha256 'c9ebb729acb0ee8e6fbeda85751be20b024c45e3ebb83cc7c624908ffb8a466d'
 
   url "http://download.oracle.com/otn-pub/java/jdk/#{version.sub(%r{^\d+\.(\d+).*?_(.*)$}, '\1u\2')}/jdk-#{version.sub(%r{^\d+\.(\d+).*?_(\d+)-.*$}, '\1u\2')}-macosx-x64.dmg",
       cookies: {
                  'oraclelicense' => 'accept-securebackup-cookie',
                }
   name 'Java Standard Edition Development Kit'
-  homepage "http://www.oracle.com/technetwork/java/javase/downloads/jdk#{version.split('.')[1]}-downloads-2133151.html"
-  license :gratis
+  homepage "https://www.oracle.com/technetwork/java/javase/downloads/jdk#{version.split('.')[1]}-downloads-2133151.html"
 
   pkg "JDK #{version.split('.')[1]} Update #{version.sub(%r{^.*?_(\d+)-.*$}, '\1')}.pkg"
 
@@ -27,7 +26,7 @@ cask 'java' do
            '/bin/mkdir', '-p', '--', "/Library/Java/JavaVirtualMachines/jdk#{version.split('-')[0]}.jdk/Contents/Home/bundle/Libraries"
     system '/usr/bin/sudo', '-E', '--',
            '/bin/ln', '-nsf', '--', "/Library/Java/JavaVirtualMachines/jdk#{version.split('-')[0]}.jdk/Contents/Home/jre/lib/server/libjvm.dylib", "/Library/Java/JavaVirtualMachines/jdk#{version.split('-')[0]}.jdk/Contents/Home/bundle/Libraries/libserver.dylib"
-    if MacOS.release <= :mavericks
+    if MacOS.version <= :mavericks
       system '/usr/bin/sudo', '-E', '--',
              '/bin/rm', '-rf', '--', '/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK'
       system '/usr/bin/sudo', '-E', '--',
@@ -52,7 +51,7 @@ cask 'java' do
                          "/Library/Java/JavaVirtualMachines/jdk#{version.split('-')[0]}.jdk/Contents",
                          '/Library/PreferencePanes/JavaControlPanel.prefPane',
                          '/Library/Java/Home',
-                         if MacOS.release <= :mavericks
+                         if MacOS.version <= :mavericks
                            [
                              '/usr/lib/java/libjdns_sd.jnilib',
                              '/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK',
@@ -79,6 +78,6 @@ cask 'java' do
     Installing this Cask means you have AGREED to the Oracle Binary Code
     License Agreement for Java SE at
 
-      http://www.oracle.com/technetwork/java/javase/terms/license/index.html
+      https://www.oracle.com/technetwork/java/javase/terms/license/index.html
   EOS
 end

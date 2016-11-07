@@ -1,17 +1,25 @@
 cask 'parallels-desktop' do
-  version '11.1.2-32408'
-  sha256 '6de7591cd24d837f109c895d23b56938b720debcb336c49634664e67b49f69e0'
+  version '12.0.2-41353'
+  sha256 'a815c1137589ffec00699b33acef545043de9d532ef8475dfa069352d45bae11'
 
-  url "http://download.parallels.com/desktop/v#{version[%r{^\w+}]}/#{version}/ParallelsDesktop-#{version}.dmg"
+  url "https://download.parallels.com/desktop/v#{version[%r{^\w+}]}/#{version}/ParallelsDesktop-#{version}.dmg"
   name 'Parallels Desktop'
   homepage 'https://www.parallels.com/products/desktop/'
-  license :commercial
 
   app 'Parallels Desktop.app'
 
   postflight do
-    # Set the file to visible, since it was hidden in the dmg
-    system '/usr/bin/SetFile', '-a', 'v', staged_path.join('Parallels Desktop.app')
+    # Unhide the application
+    system '/usr/bin/sudo', '-E', '--', 'chflags', 'nohidden', "#{appdir}/Parallels Desktop.app"
+
+    # Run the initialization script
+    system '/usr/bin/sudo', '-E', '--',
+           "#{appdir}/Parallels Desktop.app/Contents/MacOS/inittool",
+           'init', '-b', "#{appdir}/Parallels Desktop.app"
+  end
+
+  uninstall_preflight do
+    set_ownership "#{appdir}/Parallels Desktop.app"
   end
 
   uninstall delete: [

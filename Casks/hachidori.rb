@@ -1,14 +1,13 @@
 cask 'hachidori' do
-  version '1.1.7.2'
-  sha256 '65f11c9d94c68e7e46aa89a9923dbddb95c2c7abb0c183dc26aafa5ec6caf827'
+  version '1.1.8'
+  sha256 'f97371c885af817177f4660232287176777e17092c0a25a9d1a74de8b31c0e52'
 
-  # github.com is the official download host per the vendor homepage
+  # github.com/chikorita157/hachidori was verified as official when first introduced to the cask
   url "https://github.com/chikorita157/hachidori/releases/download/#{version}/Hachidori-#{version}.zip"
   appcast 'https://github.com/chikorita157/hachidori/releases.atom',
-          checkpoint: 'b77dc40831d44d712e81693e73217f9f6d43accb5ae7552709a3bf4b8be1b9a6'
+          checkpoint: 'f72e2b4819b37d77f73496453f1d91398d2f677314c9492b9db3b3c927c8c0e5'
   name 'Hachidori'
   homepage 'http://hachidori.ateliershiori.moe'
-  license :bsd
 
   app 'Hachidori.app'
 end

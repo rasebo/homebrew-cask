@@ -1,11 +1,10 @@
 cask 'makemkv' do
-  version '1.9.9'
-  sha256 '062cecc78b799815d24b256b335a63ee9d2273a851b9b34afb884ed3d73b917d'
+  version '1.10.2'
+  sha256 'cb2dd115242e2ab0c11aa1e167aa44337094410a621855326c90f6b5dd6f40c7'
 
-  url "http://www.makemkv.com/download/makemkv_v#{version}_osx.dmg"
+  url "https://www.makemkv.com/download/makemkv_v#{version}_osx.dmg"
   name 'MakeMKV'
-  homepage 'http://www.makemkv.com/'
-  license :freemium
+  homepage 'https://www.makemkv.com/'
 
   depends_on macos: '>= :snow_leopard'
 

@@ -1,15 +1,14 @@
 cask 'adobe-reader' do
-  version '2015.010.20056'
-  sha256 'bc6c00e34aea417cfe6e3b4c556a798b749d904d0da7ea837edad2fa1584c022'
+  version '15.020.20039'
+  sha256 'fb4bb75835c83ddd1cbd1aa1e1e717daf2f9a3513b01f087dc703856379f6a6a'
 
-  url "http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/#{version.gsub('.', '')[2..-1]}/AcroRdrDC_#{version.gsub('.', '')[2..-1]}_MUI.dmg"
+  url "http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/#{version.no_dots}/AcroRdrDC_#{version.no_dots}_MUI.dmg"
   name 'Adobe Acrobat Reader DC'
   homepage 'https://www.adobe.com/products/reader.html'
-  license :gratis
 
   depends_on macos: '>= 10.9'
 
-  pkg "AcroRdrDC_#{version.gsub('.', '')[2..-1]}_MUI.pkg"
+  pkg "AcroRdrDC_#{version.no_dots}_MUI.pkg"
 
   uninstall pkgutil: 'com.adobe.acrobat.DC.reader.*',
             delete:  '/Applications/Adobe Acrobat Reader DC.app'

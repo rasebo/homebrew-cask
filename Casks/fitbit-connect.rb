@@ -1,11 +1,10 @@
 cask 'fitbit-connect' do
-  version '20151030_2.0.1.6757'
-  sha256 '7cfb4822e7b6b70652b80d550cfba7b33ea5fdac07c213ad034ebdb5f409b14a'
+  version '20160602_2.0.1.6801'
+  sha256 '2c51d17bb093465b703e645ef62f463e89660054b57583a993589e78583f7d6a'
 
   url "http://cache.fitbit.com/FitbitConnect/FitbitConnect_Mac_#{version}.dmg"
   name 'Fitbit Connect'
   homepage 'https://www.fitbit.com/'
-  license :gratis
 
   pkg 'Install Fitbit Connect.pkg'
 

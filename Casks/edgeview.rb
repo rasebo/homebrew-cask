@@ -1,14 +1,13 @@
 cask 'edgeview' do
-  version '0.9997'
-  sha256 '5972e4db1508de88b838dd9287c56b20eea3dda9b5b52d88490897020368a6aa'
+  version '0.9999'
+  sha256 '25ad46a6e90d97f89d80a3b24ffd1ac361004772990880c531f9095d6976bada'
 
-  # dropboxusercontent.com is the official download host per the vendor homepage
-  url "https://dl.dropboxusercontent.com/u/168552/edgeViewUpdate/files/EdgeView_#{version.sub(%r{^\d+\.}, '')}.zip"
+  # dropboxusercontent.com/u/168552 was verified as official when first introduced to the cask
+  url "https://dl.dropboxusercontent.com/u/168552/edgeViewUpdate/files/EdgeView_#{version.minor}.zip"
   appcast 'https://dl.dropboxusercontent.com/u/168552/edgeViewUpdate/edgeView_update.xml',
-          checkpoint: '006594c1812dbf8a14cf909f05508dd965e4af1d58b3a27cd9fcffdf8752220e'
+          checkpoint: '4bc735f9b4042e6bc67067de3ef236c30c831e375f9ad99cd780790bcbf8e94b'
   name 'EdgeView'
   homepage 'https://edgehigh.wordpress.com'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'EdgeView.app'
 end

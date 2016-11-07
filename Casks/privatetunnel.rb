@@ -1,13 +1,13 @@
 cask 'privatetunnel' do
-  version '2.5'
-  sha256 '9bd6f9cbba603ed41663228c6d00d31fce656b941a6c139a7dbcae40c822528b'
+  version '2.7'
+  sha256 '64ff83847f41cbdc857f616bff03477292c30e2283ce9617a59bb4bbba1058b4'
 
+  # swupdate.openvpn.org/privatetunnel was verified as official when first introduced to the cask
   url "https://swupdate.openvpn.org/privatetunnel/client/privatetunnel-mac-#{version}.dmg"
   name 'Private Tunnel'
   homepage 'https://www.privatetunnel.com'
-  license :gratis
 
-  pkg 'PrivateTunnel.mpkg'
+  pkg 'PrivateTunnel.pkg'
 
   uninstall script: 'Uninstaller.command'
 end

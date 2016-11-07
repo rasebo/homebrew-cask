@@ -1,14 +1,12 @@
 cask 'murus' do
-  version '1.3'
-  sha256 '66dd2d286b9567a02b8dafb83a7e848f8743d7dd6ef662e9b379496613442c50'
+  version '1.4.4'
+  sha256 '991af45515b74457013f436403632ba97ef9d8755d4ab628966da144e8021a1c'
 
   url "http://www.murusfirewall.com/downloads/murus-#{version}.zip"
   name 'Murus Firewall'
   homepage 'http://www.murusfirewall.com'
-  license :freemium
 
   depends_on macos: '>= :mavericks'
-  container nested: "Murus #{version}.dmg"
 
   app 'Murus.app'
 end

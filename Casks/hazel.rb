@@ -1,19 +1,21 @@
 cask 'hazel' do
-  version '3.3.7'
-  sha256 '2b62354eb885e809ee48aba37de6dd701d4ab22ec4686b66efdc08ac36162efc'
+  version '4.0.7'
+  sha256 'd9be69c1b8768f701881933ed1bcbfc7423feee3d944bd7136bc07aedf17bd69'
 
-  # amazonaws.com is the official download host per the vendor homepage
+  # s3.amazonaws.com/Noodlesoft was verified as official when first introduced to the cask
   url "https://s3.amazonaws.com/Noodlesoft/Hazel-#{version}.dmg"
-  appcast 'http://update.noodlesoft.com/Products/Hazel/changelog.php',
-          checkpoint: 'ea87190add8dce6bca682ac10c71e86dc3becfe6bd6e06dbdf58245c0210289e'
+  appcast 'https://www.noodlesoft.com/Products/Hazel/generate-appcast.php',
+          checkpoint: 'ca7bc9da3fd4cdd595beb78201379cd4297938332c2ffbf4aa5a738ab8e28f05'
   name 'Hazel'
   homepage 'https://www.noodlesoft.com/hazel.php'
-  license :freemium
 
-  prefpane 'Hazel.prefPane'
+  prefpane 'Install Hazel.app/Contents/Resources/Hazel.prefPane'
+
+  uninstall quit: 'com.noodlesoft.HazelHelper'
 
   zap delete: [
                 '~/Library/Application Support/Hazel',
                 '~/Library/Preferences/com.noodlesoft.Hazel.plist',
+                '~/Library/Preferences/com.noodlesoft.HazelHelper.plist',
               ]
 end

@@ -1,14 +1,13 @@
 cask 'iconjar' do
-  version '0.85'
-  sha256 'fc8aec4891040cd1e625e5aa24102a64dca2cc730faa43f8abeeec57bb9aa562'
+  version '0.9.5.2,98'
+  sha256 '21c9d6d5b37eab2fc3f31c8adc12765765dd375192616a99e2db42381354ec96'
 
-  # hockeyapp.net is the official download host per the vendor homepage
-  url 'https://rink.hockeyapp.net/api/2/apps/b91fcb22f1ac5013dad6ffde2dca7c79/app_versions/32?format=zip&avtoken=03420a7f7f0094306d4402ec849916e3ad8187c1'
+  # hockeyapp.net/api/2/apps/b91fcb22f1ac5013dad6ffde2dca7c79 was verified as official when first introduced to the cask
+  url "https://rink.hockeyapp.net/api/2/apps/b91fcb22f1ac5013dad6ffde2dca7c79/app_versions/#{version.after_comma}?format=zip"
   appcast 'https://rink.hockeyapp.net/api/2/apps/b91fcb22f1ac5013dad6ffde2dca7c79',
-          checkpoint: '90e3389a85fb997d005c33b402ecad84f5e9e6941378a01b348ca4301aa087d2'
+          checkpoint: '6279ca41ca42667780f330ffd5d295466dcb1113b386de276e66951b97c3a0ac'
   name 'IconJar'
   homepage 'http://geticonjar.com/'
-  license :gratis
 
   app 'IconJar.app'
 end

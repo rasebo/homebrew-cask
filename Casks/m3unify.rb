@@ -1,13 +1,12 @@
 cask 'm3unify' do
-  version '1.4.2'
-  sha256 '91bc8e53a10f670d3f939f19a1404a060c83fb47c52b7729e59023e915d66085'
+  version '1.4.5'
+  sha256 'db2275b3b1a510f4de63eb22591d0795a67ed4ce1c54afff6f8c46b41ec3e026'
 
-  url "http://dougscripts.com/itunes/scrx/m3unifyv#{version.delete('.')}.zip"
-  appcast 'http://dougscripts.com/itunes/itinfo/m3unify_appcast.xml',
-          checkpoint: 'b8d87a0a8208775ffa3806c6c82443ad14569e909e2e7c0fbbd0c5b2b95afd4b'
+  url "https://dougscripts.com/itunes/scrx/m3unifyv#{version.no_dots}.zip"
+  appcast 'https://dougscripts.com/itunes/itinfo/m3unify_appcast.xml',
+          checkpoint: '1a309263774228ee6086a6275dca2a1436c326b0342fb549ee8d63e24224331d'
   name 'M3Unify'
-  homepage 'http://dougscripts.com/itunes/itinfo/m3unify.php'
-  license :commercial
+  homepage 'https://dougscripts.com/apps/m3unifyapp.php'
 
   app 'M3Unify.app'
 end

@@ -1,12 +1,11 @@
 cask 'eagle' do
-  version '7.5.0'
-  sha256 '1abad61ebd8dd42dca64c289dccb38f39c2fe9c67d3313d53ec31e6bad74870b'
+  version '7.7.0'
+  sha256 '4f6aae6e2b56f3da4bd24940ac4f09e838a2b3105c5ff506b80825a8a1250022'
 
-  # cadsoft.de is the official download host per the vendor homepage
+  # cadsoft.de was verified as official when first introduced to the cask
   url "http://web.cadsoft.de/ftp/eagle/program/#{version.sub(%r{\.\d+$}, '')}/eagle-mac64-#{version}.zip"
   name 'CadSoft EAGLE'
   homepage 'https://www.cadsoftusa.com/'
-  license :freemium
 
   pkg "eagle-mac64-#{version}.pkg"
 

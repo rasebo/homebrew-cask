@@ -1,13 +1,22 @@
 cask 'plex-media-server' do
-  version '0.9.15.2.1663-7efd046'
-  sha256 'bceb2535cbeed73269c47d16b4b9738c7f67c77e7608a527be7e0fcdacf0e2e6'
+  version '1.2.6.2975-9394c87'
+  sha256 'f2d004209913f13ba9ceb0cfe3e874cabc87e0a634daffc73004a33ed3b6225a'
 
   url "https://downloads.plex.tv/plex-media-server/#{version}/PlexMediaServer-#{version}-OSX.zip"
   name 'Plex Media Server'
   homepage 'https://plex.tv/'
-  license :freemium
 
-  depends_on macos: '>= :snow_leopard'
+  depends_on macos: '>= :mountain_lion'
 
   app 'Plex Media Server.app'
+
+  uninstall quit:      'com.plexapp.plexmediaserver',
+            launchctl: 'com.plexapp.mediaserver'
+
+  zap delete: [
+                '~/Library/Application Support/Plex Media Server/',
+                '~/Library/Caches/PlexMediaServer/',
+                '~/Library/Logs/Plex Media Server/',
+                '~/Library/Preferences/com.plexapp.plexmediaserver.plist',
+              ]
 end

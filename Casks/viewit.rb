@@ -1,11 +1,10 @@
 cask 'viewit' do
-  version '2.55'
-  sha256 '0adeb4a7bb436c4082d86b78e316e9dfb312b4499a43421d8548873c107afb3d'
+  version '2.60'
+  sha256 '478d052bd9b7ad0e83fd61765b5ee097e143da37769efdd856b582b26c26d5b8'
 
   url "http://www.hexcat.com/downloads/ViewIt-#{version}.zip"
   name 'ViewIt'
   homepage 'http://www.hexcat.com/viewit/'
-  license :commercial
 
   app 'ViewIt.app'
 end

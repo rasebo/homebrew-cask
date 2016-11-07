@@ -5,13 +5,9 @@ cask 'chirp' do
   url "http://chirp.danplanet.com/download/#{version}/chirp-#{version}.app.zip"
   name 'CHIRP'
   homepage 'http://chirp.danplanet.com/'
-  license :gpl
+
+  depends_on arch: :intel
+  depends_on cask: 'kk7ds-python-runtime'
 
   app "chirp-#{version}.app"
-
-  caveats <<-EOS.undent
-    #{token} also requires the KK7DS Python Runtime as described at
-
-      http://chirp.danplanet.com/projects/chirp/wiki/Download#CHIRP-Downloads
-  EOS
 end

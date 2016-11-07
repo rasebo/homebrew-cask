@@ -1,11 +1,10 @@
 cask 'dbvisualizer' do
-  version '9.2.14'
-  sha256 '748053c021387e0366f3ca2d5e752321047e188f9235d61b553a9a498d518450'
+  version '9.5.3'
+  sha256 'd99ed9379931ea29801b0a8e52d780548c3df1501b896175616252e43e925a6a'
 
-  url "https://www.dbvis.com/product_download/dbvis-#{version}/media/dbvis_macos_#{version.gsub('.', '_')}.dmg"
+  url "https://www.dbvis.com/product_download/dbvis-#{version}/media/dbvis_macos_#{version.dots_to_underscores}.dmg"
   name 'DbVisualizer'
   homepage 'https://www.dbvis.com/'
-  license :commercial
 
   app 'DbVisualizer.app'
   installer script: 'DbVisualizer Installer.app/Contents/MacOS/JavaApplicationStub',

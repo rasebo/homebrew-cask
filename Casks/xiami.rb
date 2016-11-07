@@ -4,8 +4,7 @@ cask 'xiami' do
 
   url 'http://www.xiami.com/software/download?app=music_mac'
   name 'Xiami'
-  homepage 'http://www.xiami.com/'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  homepage 'https://www.xiami.com/'
 
   app 'Xiami.app'
 

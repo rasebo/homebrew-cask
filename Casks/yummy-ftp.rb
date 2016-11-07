@@ -1,13 +1,12 @@
 cask 'yummy-ftp' do
-  version '1.11.2'
-  sha256 'de92fbbd842fba82e5ffda5797413573fd4772c33d52f9fb94252f665bea9148'
+  version '1.11.11'
+  sha256 'f35cf0b30d527a1bb117f72bad29f912a4bd26c779bc1285dd64ed254af14b60'
 
   url 'http://www.yummysoftware.com/downloads/YummyFTP.zip'
   appcast 'http://www.yummysoftware.com/su/yummyftp/feed.xml',
-          checkpoint: 'd1272c0b251a40cd507ea42c1172ea1a2d055ee1af8dad2a04ebfa35824133d1'
+          checkpoint: '27b108f2c1ba09db26e1dc121810772b0b1629e2177c6695fc1f85980b198962'
   name 'Yummy FTP'
   homepage 'http://www.yummysoftware.com'
-  license :commercial
 
   app 'Yummy FTP.app'
 end

@@ -1,11 +1,10 @@
 cask 'go-agent' do
-  version '15.1.0-1863'
-  sha256 '9777b5069326ef0a178b9c6df114c06d4bf881fb532881b15ba3966bbfbf56d7'
+  version '16.10.0-4131'
+  sha256 '401a4757ba7caaf5bdbaac1ca5e5e1f7af6674dc15b586ee90f932d1eb7a63c4'
 
-  url "http://download.go.cd/gocd/go-agent-#{version}-osx.zip"
+  url "https://download.go.cd/binaries/#{version}/osx/go-agent-#{version}-osx.zip"
   name 'Go Agent'
   homepage 'https://www.go.cd/'
-  license :apache
 
   app 'Go Agent.app'
 end

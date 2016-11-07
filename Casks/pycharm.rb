@@ -1,20 +1,21 @@
 cask 'pycharm' do
-  version '5.0.4'
-  sha256 'b6ce56e16077247f4e236a1e628c1d2498583b95ab6a5783857e789ffa219200'
+  version '2016.2.3'
+  sha256 '0e254d18cdf2dfc380110e9d05e8c3a16ec65fbf5c66316a351603e0a6d39ce8'
 
-  url "https://download.jetbrains.com/python/pycharm-professional-#{version}-jdk-bundled.dmg"
+  url "https://download.jetbrains.com/python/pycharm-professional-#{version}.dmg"
   name 'PyCharm'
   homepage 'https://www.jetbrains.com/pycharm/'
-  license :commercial
+
+  conflicts_with cask: 'pycharm-eap'
 
   app 'PyCharm.app'
 
+  uninstall delete: '/usr/local/bin/charm'
+
   zap delete: [
-                "~/.PyCharm#{version.major_minor.no_dots}",
-                '~/Library/Preferences/com.jetbrains.PyCharm.plist',
-                "~/Library/Preferences/PyCharm#{version.major_minor.no_dots}",
-                "~/Library/Application Support/PyCharm#{version.major_minor.no_dots}",
-                "~/Library/Caches/PyCharm#{version.major_minor.no_dots}",
-                "~/Library/Logs/PyCharm#{version.major_minor.no_dots}",
+                "~/Library/Preferences/PyCharm#{version.major_minor}",
+                "~/Library/Application Support/PyCharm#{version.major_minor}",
+                "~/Library/Caches/PyCharm#{version.major_minor}",
+                "~/Library/Logs/PyCharm#{version.major_minor}",
               ]
 end

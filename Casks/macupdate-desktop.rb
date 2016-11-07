@@ -1,13 +1,12 @@
 cask 'macupdate-desktop' do
-  version '6.0.9'
-  sha256 '82f8b1bc8d9ed5d3881a8ca618df146fbb82634ecca4e5aac8f96ad65389e7c4'
+  version '6.1.3'
+  sha256 'c1dac184d4b221981247fb173abc8610a00e0c0a57d7928708f8bdf709e46832'
 
   url "http://cdn.macupdate.com/MacUpdateDesktop#{version}.zip"
-  appcast 'http://www.macupdate.com/desktop/updates.xml',
-          checkpoint: '2d1167e6e25b5c477fe0e20c1bcdb18b9eed13f989aa025a0aa5611f3fe7c678'
+  appcast 'https://www.macupdate.com/desktop/updates.xml',
+          checkpoint: '81693bee3a3b6917465b714432f13730e767b2781eff2cab18a21ba46475187c'
   name 'MacUpdate Desktop'
   homepage 'https://www.macupdate.com/desktop'
-  license :freemium
 
   app 'MacUpdate Desktop.app'
 

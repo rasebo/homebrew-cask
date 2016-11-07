@@ -1,13 +1,12 @@
 cask 'name-mangler' do
-  version '3.3.5'
-  sha256 'db608bd7aef53d605b08da92b7167aba536686347c2972394d024f3fa480982c'
+  version '3.3.7'
+  sha256 '27630a76e82f6426b802d43e94bc97eb84dfe426044343f0b9f4f440cfecda25'
 
   url 'https://manytricks.com/download/namemangler'
   appcast 'https://manytricks.com/namemangler/appcast.xml',
-          checkpoint: '3f57c34d228dfa2a3aa6d9de76defd2e3d1b8075b6b71a22a98cc727eddbb231'
+          checkpoint: '622b9edd29a3f31b34d0a1f9d3aa892ec2b71a5dfd7cb31769c4d41559357b05'
   name 'Name Mangler'
   homepage 'https://manytricks.com/namemangler/'
-  license :freemium
 
   auto_updates true
 

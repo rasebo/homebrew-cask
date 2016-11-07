@@ -1,17 +1,16 @@
 cask 'tower' do
-  version '2.3.3-302-6f2959a3'
-  sha256 '5c23102b735172bc311cd811f7dec8a98a40c2c0cff2cefc9960f930c2515bc8'
+  version '2.5.2-334-bc7e6fb8'
+  sha256 '16f84397d3d323c1e810bf7421d429bde37c04e261aeaf6a35d1037c17d5607f'
 
-  # amazonaws.com/apps/tower2-mac was verified as official when first introduced to the cask
-  url "https://fournova-app-updates.s3.amazonaws.com/apps/tower#{version.major}-mac/#{version.sub(%r{^.*?-}, '')}/Tower-#{version.to_i}-#{version.sub(%r{-[^-]*$}, '')}.zip"
+  # fournova-app-updates.s3.amazonaws.com was verified as official when first introduced to the cask
+  url "https://fournova-app-updates.s3.amazonaws.com/apps/tower#{version.major}-mac/#{version.sub(%r{^[^\-]+\-}, '')}/Tower-#{version.major}-#{version.sub(%r{-[^-]+$}, '')}.zip"
   appcast "https://updates.fournova.com/updates/tower#{version.major}-mac/stable",
-          checkpoint: '27fe49ac98891e95b5c22a650e4273697b665dd0fc7193c708491451de88a5fd'
+          checkpoint: 'e3301dc2ed75b2d55109fb79e3e3fe83a0d3d88ce75b97ae8d6f559fd02a20e2'
   name 'Tower'
   homepage 'https://www.git-tower.com/'
-  license :commercial
 
   app 'Tower.app'
-  binary 'Tower.app/Contents/MacOS/gittower'
+  binary "#{appdir}/Tower.app/Contents/MacOS/gittower"
 
   zap delete: [
                 "~/Library/Application Support/com.fournova.Tower#{version.major}",

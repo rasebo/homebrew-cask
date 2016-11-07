@@ -1,11 +1,12 @@
 cask 'mediathekview' do
-  version '10'
-  sha256 '6118fb5362f08f8204c56f52864ae030c05e4212de96330e8bcc40c5cea5d319'
+  version '12'
+  sha256 'c0671283d2719028815adeb5380ad8d0991ea50f680b6a041b2852d542412c5e'
 
-  url "http://downloads.sourceforge.net/project/zdfmediathk/Mediathek/Mediathek%20#{version}/MediathekView_#{version}.dmg"
+  url "https://downloads.sourceforge.net/zdfmediathk/Mediathek/Mediathek%20#{version}/MediathekView_#{version}.dmg"
+  appcast 'https://sourceforge.net/projects/zdfmediathk/rss?path=/Mediathek',
+          checkpoint: 'cc32cbb6d7db3f56cf4c4739c54a7442677a748f93548217cbc9de439b7be25a'
   name 'MediathekView'
-  homepage 'http://sourceforge.net/projects/zdfmediathk/'
-  license :gpl
+  homepage 'https://sourceforge.net/projects/zdfmediathk/'
 
   app 'MediathekView.app'
 end

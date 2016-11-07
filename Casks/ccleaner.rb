@@ -1,11 +1,10 @@
 cask 'ccleaner' do
-  version '1.11.336'
-  sha256 '811a758772125bf6be99c655098f15422f4f7834575fb687c744547cf9ebed74'
+  version '1.14.451'
+  sha256 'be3411c927b919d1332cd29e01b526c3529139c99f86a0c9db1e12918259ce70'
 
   url "https://download.piriform.com/mac/CCMacSetup#{version.sub(%r{^(\d+)\.(\d+).*}, '\1\2')}.dmg"
   name 'Piriform CCleaner'
   homepage 'https://www.piriform.com/ccleaner'
-  license :freemium
 
   app 'CCleaner.app'
 

@@ -1,11 +1,10 @@
 cask 'scratch' do
-  version '442'
-  sha256 'f122355c34dbcfe9e8ab806dd1c7b0998af67d343a8352f320601e9be0b9e869'
+  version '450'
+  sha256 'bfe08081a5430a73cdc8b5d650decfbb3d71356d1e6599d942eaf73513918998'
 
   url "https://scratch.mit.edu/scratchr2/static/sa/Scratch-#{version}.dmg"
   name 'Scratch'
   homepage 'https://scratch.mit.edu/scratch2download/'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   depends_on cask: 'adobe-air'
 
@@ -16,5 +15,6 @@ cask 'scratch' do
   uninstall script: {
                       executable: Hbc::Container::Air::INSTALLER_PATHNAME,
                       args:       %w[-uninstall -silent /Applications/Scratch\ 2.app],
+                      sudo:       true,
                     }
 end

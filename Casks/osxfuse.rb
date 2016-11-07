@@ -1,20 +1,47 @@
 cask 'osxfuse' do
-  version '2.8.3'
-  sha256 'b0f05fa6e74372b73417e89bfd103a46a0b968239f03832755e424bec09051e6'
+  version '3.5.3'
+  sha256 '9d48cbfe360bead9e9fd31bc95e18a90f03be7c4be5b5c62acd7df98c8c0c80b'
 
-  # sourceforge.net/project/osxfuse was verified as official when first introduced to the cask
-  url "http://downloads.sourceforge.net/project/osxfuse/osxfuse-#{version}/osxfuse-#{version}.dmg"
+  # github.com/osxfuse was verified as official when first introduced to the cask
+  url "https://github.com/osxfuse/osxfuse/releases/download/osxfuse-#{version}/osxfuse-#{version}.dmg"
+  appcast 'https://github.com/osxfuse/osxfuse/releases.atom',
+          checkpoint: '7d27fe5e4795751d1e734f3f8e38d62c5fd299f91b5c5a6885de9720dcba3f99'
   name 'OSXFUSE'
   homepage 'https://osxfuse.github.io/'
-  license :bsd
 
-  pkg "Install OSXFUSE #{version[0..-3]}.pkg"
+  installer script: '/usr/sbin/installer',
+            args:   [
+                      '-pkg', "#{staged_path}/Extras/FUSE for macOS #{version}.pkg",
+                      '-target', '/',
+                      '-applyChoiceChangesXML', "#{staged_path}/Extras/Choices.xml"
+                    ]
+
+  preflight do
+    IO.write "#{staged_path}/Extras/Choices.xml", <<-EOS.undent
+      <plist>
+        <array>
+        	<dict>
+        		<key>attributeSetting</key>
+        		<integer>1</integer>
+        		<key>choiceAttribute</key>
+        		<string>selected</string>
+        		<key>choiceIdentifier</key>
+        		<string>com.github.osxfuse.pkg.MacFUSE</string>
+        	</dict>
+        </array>
+      </plist>
+    EOS
+  end
 
   postflight do
     set_ownership ['/usr/local/include', '/usr/local/lib']
   end
 
-  uninstall pkgutil: 'com.github.osxfuse.pkg.Core|com.github.osxfuse.pkg.PrefPane',
+  uninstall pkgutil: [
+                       'com.github.osxfuse.pkg.Core',
+                       'com.github.osxfuse.pkg.MacFUSE',
+                       'com.github.osxfuse.pkg.PrefPane',
+                     ],
             kext:    'com.github.osxfuse.filesystems.osxfusefs'
 
   caveats do

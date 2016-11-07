@@ -1,16 +1,15 @@
 cask 'qgis' do
-  version '2.12.0-1'
-  sha256 'b398f12904f7762ee74a1d9ddebd1fd44eef85007488320dcd4899aebefc6089'
+  version '2.16.3-1'
+  sha256 'ed01b2f7f0212b548c2c5cd3d23d9baae0cbb603a7f2f7fbc2447b7339301711'
 
   url "http://www.kyngchaos.com/files/software/qgis/QGIS-#{version}.dmg"
   name 'QGIS'
   homepage 'http://www.kyngchaos.com/software/qgis'
-  license :gpl
 
   depends_on cask: 'gdal-framework'
   depends_on formula: 'matplotlib'
 
-  pkg 'Install QGIS.pkg'
+  pkg '4 Install QGIS.pkg'
 
   uninstall pkgutil: 'org.qgis.qgis-*'
 

@@ -1,12 +1,13 @@
 cask 'flash-player' do
-  version '20.0.0.306'
-  sha256 'a289a1ab838864a73070c324d882734ea6f592419d4b13d4c793caa706c625a2'
+  version '23.0.0.205'
+  sha256 '446bce8361362e87bdd9f3d4befb76a5a865c236412e8b755481962540077cdb'
 
-  # macromedia.com is the official download host per the vendor homepage
-  url "https://fpdownload.macromedia.com/pub/flashplayer/updaters/#{version.to_i}/flashplayer_#{version.to_i}_sa.dmg"
-  name 'Adobe Flash Player'
-  homepage 'https://www.adobe.com/support/flashplayer/downloads.html'
-  license :gratis
+  # macromedia.com was verified as official when first introduced to the cask
+  url "https://fpdownload.macromedia.com/pub/flashplayer/updaters/#{version.major}/flashplayer_#{version.major}_sa.dmg"
+  appcast 'http://fpdownload2.macromedia.com/get/flashplayer/update/current/xml/version_en_mac_pl.xml',
+          checkpoint: '26a40ba2c668486155b9a3bce042a5105d158ddc8a0266f13614e264727ec5c3'
+  name 'Adobe Flash Player projector'
+  homepage 'https://www.adobe.com/support/flashplayer/debug_downloads.html'
 
   app 'Flash Player.app'
 

@@ -1,11 +1,10 @@
 cask 'charles' do
-  version '3.11.2'
-  sha256 'db0a7d9c318ed239bc3d32a96f73ebba80e75cd31954179be42019222ae6557d'
+  version '4.0.1'
+  sha256 '4e5e6589a3c0b7cebefb70818735a03e6e5f11f497d9c559641238867b2092da'
 
   url "https://www.charlesproxy.com/assets/release/#{version}/charles-proxy-#{version}.dmg"
   name 'Charles'
   homepage 'https://www.charlesproxy.com/'
-  license :commercial
 
   app 'Charles.app'
 

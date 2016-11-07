@@ -4,8 +4,7 @@ cask 'fenics' do
 
   url "http://www.fenicsproject.org/pub/software/fenics/fenics-#{version}-osx10.9.dmg"
   name 'FEniCS'
-  homepage 'http://fenicsproject.org/'
-  license :gpl
+  homepage 'https://fenicsproject.org/'
 
   depends_on macos: '>= :mavericks'
 
@@ -19,13 +18,13 @@ cask 'fenics' do
       available when you start your shell by adding the following to the .profile
       file in your home directory:
 
-        source #{staged_path}/FEniCS.app/Contents/Resources/share/fenics/fenics.conf
+        source #{appdir}/FEniCS.app/Contents/Resources/share/fenics/fenics.conf
 
       If you are using an alternate shell (e.g., zsh, csh) or a modified or brewed Python,
       be sure to launch FEniCS using a clean (bash) shell.
       Creating a new shell using the following command works well:
 
-        /bin/bash --rcfile #{staged_path}/FEniCS.app/Contents/Resources/share/fenics/fenics.conf
+        /bin/bash --rcfile #{appdir}/FEniCS.app/Contents/Resources/share/fenics/fenics.conf
     EOS
   end
 end

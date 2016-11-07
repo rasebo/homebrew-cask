@@ -1,11 +1,10 @@
 cask 'nrf5x-command-line-tools' do
-  version '8.2.0'
-  sha256 '22c217ce3ef64a1e85d1ec339692fc9eed73ca8a9011cb0b21ddcd5e5bfc84ad'
+  version '9.0.0'
+  sha256 '9d568db6552d64eb65aa5d04241d0179fe67828e01b98c5c6de0760ad9993ef6'
 
-  url 'http://www.nordicsemi.com/eng/nordic/download_resource/53406/1/8099423'
+  url 'https://www.nordicsemi.com/eng/nordic/download_resource/53406/6/73591027'
   name 'nRF5x Command Line Tools'
-  homepage 'http://www.nordicsemi.com/eng/nordic/Products/nRF52832/nRF5x-Command-Line-Tools-OSX/53406'
-  license :gratis
+  homepage 'https://www.nordicsemi.com/eng/nordic/Products/nRF51-DK/nRF5x-Command-Line-Tools-OSX/53412'
 
   binary 'nrfjprog/nrfjprog'
   binary 'mergehex/mergehex'

@@ -1,12 +1,11 @@
 cask 'enpass' do
-  version '5.0.3'
-  sha256 '7d3e611bbe62dfd0b70e704cebe73158718bedb5f7bce1b0a5fc5901edaded22'
+  version '5.3.0'
+  sha256 '65a34eba1f231de0467a8953c761f37118d6a9c45b2f01af2e95cc34ad695bb5'
 
-  # sinew.in is the official download host per the vendor homepage
-  url "http://dl.sinew.in/mac/setup/Enpass-#{version}.dmg"
+  # sinew.in was verified as official when first introduced to the cask
+  url "https://dl.sinew.in/mac/setup/Enpass-#{version}.dmg"
   name 'Enpass'
   homepage 'https://enpass.io'
-  license :gratis
 
   depends_on macos: '>= :mountain_lion'
 

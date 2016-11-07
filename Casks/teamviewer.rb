@@ -5,14 +5,15 @@ cask 'teamviewer' do
   url 'https://download.teamviewer.com/download/TeamViewer.dmg'
   name 'TeamViewer'
   homepage 'https://www.teamviewer.com/'
-  license :freemium
+
+  auto_updates true
 
   pkg 'Install TeamViewer.pkg'
 
   uninstall pkgutil:   'com.teamviewer.*',
             launchctl: 'com.teamviewer.service',
             delete:    [
-                         '/Aplications/TeamViewer.app',
+                         '/Applications/TeamViewer.app',
                          '/Library/LaunchAgents/com.teamviewer.teamviewer_desktop.plist',
                          '/Library/LaunchAgents/com.teamviewer.teamviewer.plist',
                          '/Library/LaunchDaemons/com.teamviewer.Helper.plist',

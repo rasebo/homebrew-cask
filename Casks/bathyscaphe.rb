@@ -1,11 +1,10 @@
 cask 'bathyscaphe' do
-  version '270-v900'
-  sha256 'ca65c250dad51d54ab8dc45c13a8dce74f50b0bc84b0d2dba50596e6cd7d5cf2'
+  version '272-v947'
+  sha256 '997f6afef6e63d1a2a00ec8e809aafbc0b5152d7ff520d74af729c7ab394d656'
 
   url "https://bitbucket.org/bathyscaphe/public/downloads/BathyScaphe-#{version}.dmg"
   name 'BathyScaphe'
   homepage 'http://bathyscaphe.bitbucket.org/'
-  license :oss
 
   app 'BathyScaphe.app'
 end

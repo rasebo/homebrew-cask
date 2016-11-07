@@ -1,11 +1,10 @@
 cask 'psequel' do
-  version '1.4.1'
-  sha256 '06bf68f7019a037c9a17a84d4f18df071afb1cfce789d828037f1961a727aae5'
+  version '1.5.0'
+  sha256 '79052e701eebb63bd8b89c307da4b7e58bc286a7a9d7ceee00f8acbb2aee10fd'
 
   url "http://www.psequel.com/download?version=#{version}"
   name 'PSequel'
   homepage 'http://www.psequel.com'
-  license :closed
 
   app 'PSequel.app'
 end

@@ -1,14 +1,13 @@
 cask 'transmission' do
-  version '2.84'
-  sha256 '53d08a55a5ca55010d409acb10f0285a649b8879085cad83f2cbcb7faa489ad5'
+  version '2.92'
+  sha256 '926a878cac007e591cfcea987048abc0689d77e7729a28255b9ea7b73f22d693'
 
-  # cachefly.net is the official download host per the vendor homepage
-  url "https://transmission.cachefly.net/Transmission-#{version}.dmg"
-  appcast 'https://update.transmissionbt.com/appcast.xml',
-          checkpoint: '430a5151b1e38fd2d6f544c8877b2cdd4deda6dc4b3cc6a6620550de4a8fdfec'
+  # github.com/transmission/transmission was verified as official when first introduced to the cask
+  url "https://github.com/transmission/transmission/releases/download/#{version}/transmission-#{version}.dmg"
+  appcast 'https://github.com/transmission/transmission/releases.atom',
+          checkpoint: '97d7eb25ba4b293ec0948784d0b73c45483a2daa9cd00fcd5e80a9b56107ffc1'
   name 'Transmission'
-  homepage 'http://www.transmissionbt.com/'
-  license :gpl
+  homepage 'https://www.transmissionbt.com/'
 
   auto_updates true
 
@@ -17,8 +16,10 @@ cask 'transmission' do
   zap delete: [
                 '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.m0k.transmission.sfl',
                 '~/Library/Application Support/Transmission',
+                '~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/org.m0k.transmission.help',
+                '~/Library/Caches/org.m0k.transmission',
+                '~/Library/Cookies/org.m0k.transmission.binarycookies',
                 '~/Library/Preferences/org.m0k.transmission.plist',
                 '~/Library/Preferences/org.m0k.transmission.LSSharedFileList.plist',
-                '~/Library/Caches/org.m0k.transmission',
               ]
 end

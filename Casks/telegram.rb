@@ -1,12 +1,14 @@
 cask 'telegram' do
-  version '0.9.18'
-  sha256 '5faefc8544f5f6aa0b680fc6276183f8c12f9247ad1bfaf78e2e31e812513f3e'
+  version '2.27-51120'
+  sha256 '4fda51a83b90134ad28dc9f652bd421d4e78d82f6ed52b22874a7d9120fa1f76'
 
-  # tdesktop.com is the official download host per the vendor homepage
-  url "https://updates.tdesktop.com/tmac/tsetup.#{version}.dmg"
-  name 'Telegram Desktop'
-  homepage 'https://desktop.telegram.org/'
-  license :gpl
+  url "https://osx.telegram.org/updates/Telegram-#{version}.app.zip"
+  appcast 'https://osx.telegram.org/updates/versions.xml',
+          checkpoint: 'be255033b99e0ea72d0d0ef8f2f8b326ec87e81688bd5b19405ba148eb83ccaa'
+  name 'Telegram for macOS'
+  homepage 'https://macos.telegram.org'
+
+  auto_updates true
 
   app 'Telegram.app'
 end

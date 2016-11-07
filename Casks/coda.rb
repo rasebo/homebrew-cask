@@ -1,11 +1,10 @@
 cask 'coda' do
-  version '2.5.12'
-  sha256 '3bcb4a1f99a47edd087b9579c206a38cecae1a31287e84121c5775b8752a8c3f'
+  version '2.5.19'
+  sha256 '5d734cdac6b47b07ca8ef9224611b0f7c8a57f1ec7b66eb7befdfcaf20896548'
 
   url "https://download.panic.com/coda/Coda%20#{version}.zip"
   name 'Panic Coda'
-  homepage 'https://panic.com/Coda/'
-  license :commercial
+  homepage 'https://panic.com/coda/'
 
   depends_on macos: '>= :lion'
 

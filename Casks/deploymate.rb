@@ -1,14 +1,13 @@
 cask 'deploymate' do
-  version '1.3.1'
-  sha256 '6b8cfcb50ad123730a730ed3f212402bb68a53586056a5a50e6ff8b9368ef885'
+  version '1.3.4'
+  sha256 '08842ecba6773b0caba59296b415e7fd8595ba55e8c8bb686bdd11928350c8eb'
 
   # amazonaws.com/deploymate was verified as official when first introduced to the cask
-  url "https://s3.amazonaws.com/deploymate/download/Deploymate#{version.delete('.')}.zip"
+  url "https://s3.amazonaws.com/deploymate/download/Deploymate#{version.no_dots}.zip"
   appcast 'http://www.deploymateapp.com/deploymate-updates.xml',
-          checkpoint: '83474c787fd7b018f77890210bde1d866fc45692c6134182d38387d06cdbe032'
+          checkpoint: 'a112f2107f7ed54b36a5a45e20da34d3a07ea19f97b3c925dec5568f8ca64204'
   name 'Deploymate'
   homepage 'http://www.deploymateapp.com'
-  license :commercial
 
   app 'Deploymate.app'
 

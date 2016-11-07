@@ -1,13 +1,12 @@
 cask 'dnscrypt' do
-  version '1.0.10'
-  sha256 'd092d9151035a0853902261e883d5ba7c50cb93beea9834db41303b2ec4276e0'
+  version '1.0.12'
+  sha256 'f3badcc535933cfc7bdae7b0cb1e0f7d89a46d1fb085f4f3baff3b8d4f38a797'
 
   url "https://github.com/alterstep/dnscrypt-osxclient/releases/download/#{version}/dnscrypt-osxclient-#{version}.dmg"
   appcast 'https://github.com/alterstep/dnscrypt-osxclient/releases.atom',
-          checkpoint: 'c90ef83cd8f91e7a9f7cda90a4ad2ed9ceab0807afe6deeeb39a8a2a75d56360'
+          checkpoint: '29c595e8cc826a70d1f0bee7a30930f53ba3f06d1a4e422879bf92bac139ddad'
   name 'DNSCrypt'
   homepage 'https://github.com/alterstep/dnscrypt-osxclient'
-  license :oss
 
   pkg 'DNSCrypt.pkg'
 

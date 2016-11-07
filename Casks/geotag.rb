@@ -1,5 +1,5 @@
 cask 'geotag' do
-  if MacOS.release <= :mountain_lion
+  if MacOS.version <= :mountain_lion
     version '2.2'
     sha256 'c5553af3b37903b7e4f402d8c9fbeced63492295c6bdd25987dd70ab367c32e9'
   else
@@ -9,10 +9,9 @@ cask 'geotag' do
 
   url "http://www.snafu.org/GeoTag/GeoTag-#{version}.dmg"
   appcast 'http://www.snafu.org/GeoTag/',
-          checkpoint: 'dd2955d0beafa2a1ef44d005a32cbe54f4c12a9fdfc3a6a92533f96d01fa2142'
+          checkpoint: '6bccfd48a9ee7ae4a438c7c48684052cd93e783c2252e9c22b29aaa156bf483c'
   name 'GeoTag'
   homepage 'http://www.snafu.org/GeoTag/'
-  license :cc
 
   depends_on formula: 'exiftool'
 

@@ -1,13 +1,12 @@
 cask 'gpgtools' do
-  version '2015.09'
-  sha256 '0ec0f4bb66ef660d3c3b0433dd3186e093a1b4f23bf8fac8b4ebca9fa6d80420'
+  version '2016.10_v2'
+  sha256 '8dbc5821876ca5c470d0127087f782ba02a842c52e6e19336cd935db7c5859ab'
 
   url "https://releases.gpgtools.org/GPG_Suite-#{version}.dmg"
   appcast 'https://gpgtools.org/releases/gka/appcast.xml',
-          checkpoint: 'cfae78bc857a5fd52d452ddc11c3a39d3fc6233b8e0ef6bbc61fd7ed1e0f841d'
+          checkpoint: 'a5e963e76b0096573035e1c77860a1d65a312afde1b4354fc1e7c2dc31a0ab08'
   name 'GPG Suite'
   homepage 'https://gpgtools.org/'
-  license :gpl
   gpg "#{url}.sig",
       key_url: 'https://gpgtools.org/GPGTools%2000D026C4.asc'
 
@@ -15,7 +14,7 @@ cask 'gpgtools' do
 
   pkg 'Install.pkg'
 
-  # todo, remove all ENV variables
+  # TODO: remove all ENV variables
   postflight do
     system '/usr/bin/sudo', '-E', '--',
            '/usr/local/MacGPG2/libexec/fixGpgHome', Etc.getpwuid(Process.euid).name,

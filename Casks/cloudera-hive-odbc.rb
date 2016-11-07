@@ -4,8 +4,7 @@ cask 'cloudera-hive-odbc' do
 
   url "https://downloads.cloudera.com/connectors/hive-#{version}.1006/MacOSX/ClouderaHiveODBC.dmg"
   name 'Cloudera ODBC Driver for Hive'
-  homepage 'http://www.cloudera.com'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  homepage 'https://www.cloudera.com/'
 
   pkg 'ClouderaHiveODBC.pkg'
 

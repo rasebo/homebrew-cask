@@ -1,21 +1,17 @@
 cask 'splice' do
-  version '1.6.18-201602011654'
-  sha256 '00cc652f935fd01aeea974ff2516774b426b02d9dd2fcf90202bd716593ede9b'
+  version '2.1.8-201610131641'
+  sha256 '7123768004fce6a259752f47c948e1309e53853391a8e562da7074e588df0dbd'
 
   # amazonaws.com/spliceosx was verified as official when first introduced to the cask
   url "https://s3-us-west-1.amazonaws.com/spliceosx/Splice.app-#{version}.zip"
   appcast 'https://splice.com/appcast.xml',
-          checkpoint: 'fb376fa579ff56e074816813503b49616539e04c86ae23e8ec37afca4f0b7db1'
+          checkpoint: '4fb3a1e2c86176252dfc9e7367df425e43bcfb132cdf590a4caaae3597b50949'
   name 'Splice'
   homepage 'https://splice.com/'
-  license :gratis
 
-  installer script: 'Splice Installer.app/Contents/MacOS/Splice Installer',
-            args:   ['-q'],
-            sudo:   false
+  app 'Splice.app'
 
-  uninstall quit:   'com.splice.Splice',
-            delete: '/Applications/Splice.app'
+  uninstall quit:   'com.splice.Splice'
 
   zap delete: [
                 '~/Library/Application Support/*Splice*',

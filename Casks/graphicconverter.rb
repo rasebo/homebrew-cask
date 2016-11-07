@@ -1,14 +1,13 @@
 cask 'graphicconverter' do
-  version '9-2083'
-  sha256 '2c3aa286866241f6c076e8b0e92a9a4ce0fdae27fab49828cd959239eaec76e7'
+  version '10.2628'
+  sha256 '50f54dcb134be2661b552320c17b74838b65990acf4ab8416a29a5da16fc5052'
 
-  # lemkesoft.org is the official download host per the vendor homepage
-  url "http://www.lemkesoft.org/files/graphicconverter/gc#{version.to_i}_build#{version.sub(%r{^\d-}, '')}.dmg"
-  appcast 'http://www.lemkesoft.org/files/graphicconverter/graphicconverter9.xml',
-          checkpoint: '481e55a7f914ee258049861d7d16d320fbac883eae6ed76055840fcfb60ca3e8'
+  # lemkesoft.info was verified as official when first introduced to the cask
+  url "https://www.lemkesoft.info/files/graphicconverter/gc#{version.major}_build#{version.minor}.zip"
+  appcast "http://www.lemkesoft.org/files/graphicconverter/graphicconverter#{version.major}.xml",
+          checkpoint: '621f0918d123dd684b30e03995c383469a893408dc180aba7a760e87c0d1cf6f'
   name 'GraphicConverter'
-  homepage 'http://www.lemkesoft.de/en/products/graphicconverter/'
-  license :commercial
+  homepage 'https://www.lemkesoft.de/en/products/graphicconverter/'
 
-  app "GraphicConverter #{version.to_i}.app"
+  app "GraphicConverter #{version.major}.app"
 end

@@ -1,14 +1,13 @@
 cask 'mongodb' do
-  version '3.2.1-build.1454526168'
-  sha256 'bbb15eac1f1271591306b09ac3a2cbc3cbfde053ad4cac53612562d9dbc9b4af'
+  version '3.2.8-build.1'
+  sha256 '54079eaad459c1910110f83c9ee160bc13fd87aa90fc27b6ae6d4dae292f5dfd'
 
-  # github.com is the official download host per the vendor homepage
+  # github.com/gcollazo/mongodbapp was verified as official when first introduced to the cask
   url "https://github.com/gcollazo/mongodbapp/releases/download/#{version}/MongoDB.zip"
   appcast 'https://github.com/gcollazo/mongodbapp/releases.atom',
-          checkpoint: 'fbfc632998e400d3b5f718f06096584b78bc9f27dacc40984d6991cc21558d19'
+          checkpoint: '30d0c2fb36e0c5551d05614dea789cc6d5dacf8687c90c8474e229cbfaae295b'
   name 'MongoDB'
   homepage 'https://elweb.co/mongodb-app/'
-  license :mit
 
   app 'MongoDB.app'
 

@@ -4,8 +4,7 @@ cask 'baygenie' do
 
   url 'https://www.baygenie.com/Download/BayGenie4Mac.dmg'
   name 'BayGenie'
-  homepage 'http://www.baygenie.com/'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  homepage 'https://www.baygenie.com/'
 
   app 'BayGenie.app'
 end

@@ -1,12 +1,11 @@
 cask 'ostiarius' do
-  version '1.0.1'
-  sha256 '7f4c3cea1d0a8fc00d64e9781be27f36ea92de3ef2533bbfcbf2781aef525565'
+  version '1.2.0'
+  sha256 '80d67c4e090013ee3fa9d87696778ec4e6a303362147158966fe547c8c45727a'
 
-  # bitbucket.org is the official download host per the vendor homepage
+  # bitbucket.org/objective-see was verified as official when first introduced to the cask
   url "https://bitbucket.org/objective-see/deploy/downloads/Ostiarius_#{version}.zip"
   name 'Ostiarius'
   homepage 'https://objective-see.com/products/ostiarius.html'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'Ostiarius.app'
 

@@ -1,14 +1,13 @@
 cask 'subler' do
-  version '1.0.8'
-  sha256 'ca4e5de56cddac494936916bfcf837cb4ab181bdcc1abcf1e6093699eaa514e4'
+  version '1.1.8'
+  sha256 '9d298dddd7b75c6d305c94d3256f23a59cfb52b881f86a135a96e99761e383fd'
 
-  # bitbucket.org is the official download host per the vendor homepage
+  # bitbucket.org/galad87/subler was verified as official when first introduced to the cask
   url "https://bitbucket.org/galad87/subler/downloads/Subler-#{version}.zip"
   appcast 'https://subler.org/appcast/appcast.xml',
-          checkpoint: '348e5ac77e8e5cecb8c9e73683fb4e131a5ac9688e70893254e526125ca07117'
+          checkpoint: '2cf6c8796570b362b6ee226f37f640488036ea4bf947875767af096188226793'
   name 'Subler'
   homepage 'https://subler.org/'
-  license :gpl
 
   auto_updates true
 

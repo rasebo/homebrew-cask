@@ -1,11 +1,10 @@
 cask 'eclipse-modeling' do
-  version '4.5.1'
-  sha256 'cc3478ef7c2f220d3ee0d90bed27892db2b3a2386d2e7d6fe48b8f375c71da7b'
+  version '4.6.1,neon:1a'
+  sha256 '641854cb0c5b1fac540e6ae77ae9ed040975c51f28b98861cb9757a1898555dd'
 
-  url 'https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/1/eclipse-modeling-mars-1-macosx-cocoa-x86_64.tar.gz&r=1'
+  url "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/#{version.after_comma.before_colon}/#{version.after_colon}/eclipse-modeling-#{version.after_comma.before_colon}-#{version.after_colon}-macosx-cocoa-x86_64.tar.gz&r=1"
   name 'Eclipse Modeling Tools'
   homepage 'https://eclipse.org/'
-  license :eclipse
 
   depends_on macos: '>= :leopard'
   depends_on arch: :x86_64

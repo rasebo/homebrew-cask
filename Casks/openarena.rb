@@ -5,11 +5,10 @@ cask 'openarena' do
   url 'http://openarena.ws/request.php?4'
   name 'OpenArena'
   homepage 'http://openarena.ws'
-  license :gpl
 
   app "openarena-#{version}/OpenArena.app"
 
   postflight do
-    set_permissions "#{staged_path}/openarena-#{version}/OpenArena.app/Contents/MacOS/openarena.ub", '755'
+    set_permissions "#{appdir}/OpenArena.app/Contents/MacOS/openarena.ub", '755'
   end
 end

@@ -1,15 +1,24 @@
 cask 'marked' do
-  version '2.5.4915'
-  sha256 '35f305d124b92724cc7a9140561580949f2d06e0747d4124d860412cb62dbe79'
+  version '2.5.6'
+  sha256 'e197536389026d1a4113afafb642e09787105de8af37b5a13fd54dfbf37209a5'
 
   url 'http://marked2app.com/download/Marked.zip'
-  appcast 'http://abyss.designheresy.com/marked/marked.xml',
-          checkpoint: 'fac95d3b4091df5d80910403d0f78c0944b908a1098642fcb43b332b930c285c'
+  appcast 'https://updates.marked2app.com/marked.xml',
+          checkpoint: '40894257f0c3314711b7748a678d9f05c0ce4b5183f47a7f36795f119dbd7608'
   name 'Marked'
   homepage 'http://marked2app.com'
-  license :commercial
 
   auto_updates true
 
   app 'Marked 2.app'
+
+  uninstall quit: 'com.brettterpstra.marked2'
+
+  zap delete: [
+                '~/Library/Application Support/Marked 2/paddata.padl',
+                '~/Library/Application Support/Marked 2/queue.pak',
+                '~/Library/Containers/com.brettterpstra.marked2',
+                '~/Library/Preferences/com.brettterpstra.marked2.LSSharedFileList.plist',
+                '~/Library/Saved Application State/com.brettterpstra.marked2.savedState',
+              ]
 end
